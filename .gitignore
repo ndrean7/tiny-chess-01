@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+main-packed.py
+tests/
+engine.py
+BUILD_NOTES.md
