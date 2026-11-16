@@ -16,7 +16,8 @@ A chess engine in a single packed `main.py` (4,032 bytes) for the
   transposition table, killer moves, MVV-LVA capture ordering, and
   quiescence over captures, promotions and replies to check. Mate
   scores are never stored in the TT.
-- **Eval:** material + piece-square tables (incremental), endgame
+- **Eval:** material + piece-square tables (incremental), a +10 cp
+  tempo bonus for the side to move, endgame
   king centralization (king heads for the centre once material
   drops below 1300), a passed-pawn bonus in the endgame
   (up to +100 cp for a 7th-rank passer), game-history repetition
@@ -37,11 +38,11 @@ MAKEFUN_ENV_URL=http://127.0.0.1:18080 python3 main.py
 ## Local results
 
 Practice trials (6 games each vs the gauntlet's first six engines):
-**trial 0 Elo 1,279, trial 1 Elo 1,279, trial 2 Elo 1,099 — mean
-1,219**, vs 1,159 for the previous build. No losses on time in
-any trial (max think 2.8 s vs the 10 s limit). Perft vs
-python-chess passes on all 6 test positions; board consistency
-bad = 0.
+**trial 0 Elo 1,451, trial 1 Elo 1,364, trial 2 Elo 1,099 — mean
+1,305**, vs 1,219 for the previous build. No losses on time in
+any trial (all 18 games ended by checkmate or adjudication).
+Perft vs python-chess passes on all 6 test positions; board
+consistency bad = 0.
 
 ## License
 
